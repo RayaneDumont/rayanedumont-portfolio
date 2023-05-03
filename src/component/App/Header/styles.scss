@@ -4,6 +4,11 @@
     /* autres propriétés de police optionnelles */
   }
 
+@font-face {
+    font-family:'aqua';
+    src: url('./aqua.ttf');
+}
+
 /* === removing default button style ===*/
 .button-logo {
     margin: 0;

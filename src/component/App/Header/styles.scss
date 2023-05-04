@@ -173,3 +173,8 @@
   .chk:checked + .slider:after {
     transform: rotateZ(90deg) rotateY(180deg) translateY(0.45em) translateX(-1.4em);
   }
+  
+  .dropdown-item:hover {
+    background-color: #22a95a;
+    font: #15202B;
+  }

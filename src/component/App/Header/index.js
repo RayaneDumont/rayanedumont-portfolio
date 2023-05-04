@@ -1,4 +1,5 @@
 import './styles.scss'
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 function Header() {
   return  (
@@ -18,7 +19,17 @@ function Header() {
               <button className="nav-link active" aria-current="page" href="#">Home</button>
               <button className="nav-link" href="#">Projects</button>
               <button className="nav-link" href="#">Music</button>
+              <button className="nav-link" href="#">About me</button>
               <button className="nav-link disabled">Contact</button>
+              <li className="dropdown">
+                <button className="nav-link" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Language
+                </button>
+                <ul className="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                  <li><button className="dropdown-item nav-link bg-dark" href="#">French <span className="fi fi-fr"></span></button></li>
+                  <li><button className="dropdown-item nav-link bg-dark" href="#">English <span className="fi fi-gb"></span></button></li>
+                </ul>
+              </li>
             </div>
           </div>
         </div>

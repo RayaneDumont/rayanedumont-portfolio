@@ -52,6 +52,16 @@
     filter: drop-shadow(0 0 23px var(--animation-color))
   }
 
+  .custom-link {
+    text-decoration: none;
+  }
+  
+  .custom-link:focus,
+  .custom-link:hover,
+  .custom-link:active {
+    text-decoration: none;
+  }
+
 .nav-link {
   font-size: 18px;
   color: #e1e1e1;

@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './styles.scss'
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 
@@ -16,11 +17,18 @@ function Header() {
             </label>
           <div className="collapse navbar-collapse" id="navbarToggleExternalContent">
             <div className="navbar-nav">
-              <button className="nav-link active" aria-current="page" href="#">Home</button>
-              <button className="nav-link" href="#">Projects</button>
-              <button className="nav-link" href="#">Music</button>
-              <button className="nav-link" href="#">About me</button>
-              <button className="nav-link disabled">Contact</button>
+              <NavLink to='/' className="custom-link">
+                <button className="nav-link" aria-current="page" href="#">Home</button>
+              </NavLink>
+              <NavLink to='/projects' className='custom-link'>
+                <button className="nav-link" href="#">Projects</button>
+              </NavLink>
+              <NavLink to='/music' className='custom-link'>
+                <button className="nav-link" href="#">Music</button>
+              </NavLink>
+              <NavLink to='/about-me' className='custom-link'>
+                <button className="nav-link" href="#">About me / Contacts</button>
+              </NavLink>
               <li className="dropdown">
                 <button className="nav-link" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Language

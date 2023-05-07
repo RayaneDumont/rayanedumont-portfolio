@@ -25,6 +25,10 @@
   .aboutMe-content {
     width: 100% !important;
   }
+
+  .aboutMe-title {
+    font-size: 36px !important;
+  }
 }
 
 .aboutMe-container {
@@ -41,6 +45,8 @@
 
 .aboutMe-text {
     color: white;
+    -webkit-animation: slide-in-fwd-center 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-fwd-center 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .aboutMe-keywords {
@@ -55,13 +61,8 @@
     font-size: 40px;
     color: #fff;
     text-transform: uppercase;
-    animation: flip 5s infinite;
-}
-
-@keyframes flip {
-  0%,80% {
-    transform: rotateY(360deg) 
-  }
+    -webkit-animation: slide-in-fwd-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-fwd-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 .flip-card {
@@ -76,6 +77,8 @@
     right: 0;
     margin-right: 10em;
     margin-top: 12em;
+    -webkit-animation: slide-in-fwd-center 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-fwd-center 5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
   
   .title {
@@ -141,7 +144,7 @@
   }
 
   .aboutMe-title {
-    font-size: 36px;
+    font-size: 56px;
     height: 2em;
     color: #e1e1e1;
     font-family: 'abandoned';
@@ -409,9 +412,6 @@
       text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
     }
   }
-  
-  
-  
 
 .aboutMe-title:focus,
 .aboutMe-title:hover {

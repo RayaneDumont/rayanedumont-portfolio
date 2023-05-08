@@ -323,11 +323,16 @@ transition-duration: 400ms;
 transition-property: width, left;
 }
 
+.card-container {
+  display: flex;
+  flex-direction: row;
+}
+
 .card {
   --font-color: #323232;
   --bg-color: #e0e0e0;
   width: 250px;
-  height: 450px;
+  height: 500px;
   border-radius: 20px;
   background: var(--bg-color);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;;
@@ -335,6 +340,7 @@ transition-property: width, left;
   flex-direction: column;
   transition: .4s;
   position: relative;
+  margin: 2em;
   -webkit-animation: slide-in-fwd-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: slide-in-fwd-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
@@ -363,7 +369,6 @@ transition-property: width, left;
     opacity: 1;
   }
 }
-
 
 .card:hover {
   transform: scale(1.02);

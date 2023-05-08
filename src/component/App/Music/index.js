@@ -35,7 +35,9 @@ function Music() {
       <audio ref={audioRef} src={selectedAudio} />
       <div className='player-buttons'>
         {isPlaying ? (
-          <button onClick={handlePause}>Pause</button>
+          <button onClick={handlePause} className='pause'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
+          </button>
         ) : (
           <button onClick={handlePlay} className='play'>
             <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="26px">
@@ -44,7 +46,9 @@ function Music() {
             </svg>
           </button>
         )}
-        <button onClick={handleStop}>Stop</button>
+        <button onClick={handleStop} className='stop'>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><rect x="9" y="9" width="6" height="6"></rect></svg>
+        </button>
       </div>
 
       <div className='playlist-container'>

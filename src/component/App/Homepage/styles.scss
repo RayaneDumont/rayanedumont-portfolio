@@ -1,0 +1,216 @@
+@font-face {
+    font-family: 'abandoned';
+    src: url('./../../../Abandoned-Bold.ttf');
+}
+
+.homepage-container {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2em;
+    padding: 2em;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.word {
+    margin: auto;
+    color: white;
+    width: 250px;
+    height: 100px;
+    font: 700 normal 2.5em 'abandoned';
+    text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+}
+
+.homepage-buttons {
+
+    button {
+        --hover-shadows: 16px 16px 33px #121212,
+                          -16px -16px 33px #303030;
+        --accent: fuchsia;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-family: inherit;
+        letter-spacing: 0.1em;
+        border: none;
+        border-radius: 1.1em;
+        background-color: #212121;
+        color: white;
+        margin: 2em;
+        padding: 1em 2em;
+        transition: box-shadow ease-in-out 0.3s,
+                    background-color ease-in-out 0.1s,
+                    letter-spacing ease-in-out 0.1s,
+                    transform ease-in-out 0.1s;
+        box-shadow: 13px 13px 10px #1c1c1c,
+                    -13px -13px 10px #262626;
+                    -webkit-animation: slide-in-fwd-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                    animation: slide-in-fwd-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+       }
+       
+       button:hover {
+        box-shadow: var(--hover-shadows);
+       }
+       
+       button:active {
+        box-shadow: var(--hover-shadows),
+                     var(--accent) 0px 0px 30px 5px;
+        background-color: var(--accent);
+        transform: scale(0.95);
+       }
+}
+
+.homepage-title {
+    font-size: 56px;
+    height: 2em;
+    color: #e1e1e1;
+    font-family: 'abandoned';
+    font-weight: 200;
+    cursor: default;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+        -webkit-animation: text-flicker-in-glow 4s linear both;
+        animation: text-flicker-in-glow 4s linear both;
+  }
+
+  .homepage-title:focus,
+  .homepage-title:hover {
+    color: #fff;
+  }
+  
+  .homepage-title:focus:after,
+  .homepage-title:hover:after {
+    width: 100%;
+    left: 0%;
+    box-shadow: #fff;
+  }
+  
+  .homepage-title:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+  }
+
+  .pyramid-loader {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: block;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg);
+  }
+  
+  .wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: spin 4s linear infinite;
+  }
+  
+  @keyframes spin {
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  .pyramid-loader .wrapper .side {
+    width: 70px;
+    height: 70px;
+  /* you can choose any gradient or color you want */
+    /* background: radial-gradient( #2F2585 10%, #F028FD 70%, #2BDEAC 120%); */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transform-origin: center top;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    -webkit-animation: slide-in-fwd-center 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-fwd-center 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  
+  .pyramid-loader .wrapper .side1 {
+    transform: rotateZ(-30deg) rotateY(90deg);
+    background: conic-gradient( #2BDEAC, #F028FD, #D8CCE6, #2F2585);
+  }
+  
+  .pyramid-loader .wrapper .side2 {
+    transform: rotateZ(30deg) rotateY(90deg);
+    background: conic-gradient( #2F2585, #D8CCE6, #F028FD, #2BDEAC);
+  }
+  
+  .pyramid-loader .wrapper .side3 {
+    transform: rotateX(30deg);
+    background: conic-gradient( #2F2585, #D8CCE6, #F028FD, #2BDEAC);
+  }
+  
+  .pyramid-loader .wrapper .side4 {
+    transform: rotateX(-30deg);
+    background: conic-gradient( #2BDEAC, #F028FD, #D8CCE6, #2F2585);
+  }
+  
+  .pyramid-loader .wrapper .shadow {
+    width: 60px;
+    height: 60px;
+    background: #8B5AD5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    transform: rotateX(90deg) translateZ(-40px);
+    filter: blur(12px);
+  }
+
+
+.project-button {
+    --hover-shadows: 16px 16px 33px #121212,
+                      -16px -16px 33px #303030;
+    --accent: fuchsia;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: inherit;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: 1.1em;
+    background-color: #212121;
+    color: white;
+    margin: 2em;
+    padding: 1em 2em;
+    transition: box-shadow ease-in-out 0.3s,
+                background-color ease-in-out 0.1s,
+                letter-spacing ease-in-out 0.1s,
+                transform ease-in-out 0.1s;
+    box-shadow: 13px 13px 10px #1c1c1c,
+                -13px -13px 10px #262626;
+                -webkit-animation: slide-in-fwd-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                animation: slide-in-fwd-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+    
+.project-button:hover {
+box-shadow: var(--hover-shadows);
+}
+
+.project-button:active {
+box-shadow: var(--hover-shadows),
+              var(--accent) 0px 0px 30px 5px;
+background-color: var(--accent);
+transform: scale(0.95);
+}

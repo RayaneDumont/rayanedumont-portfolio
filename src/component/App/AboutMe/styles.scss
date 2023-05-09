@@ -8,13 +8,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
 
   .flip-card {
     position: relative !important;
-    margin-left: 10em;
     margin-top: 1em !important;
     margin-bottom: 4em;
+    margin-right: 0px !important;
   }
 
   .aboutMe-container {

@@ -202,15 +202,15 @@
                 -13px -13px 10px #262626;
                 -webkit-animation: slide-in-fwd-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
                 animation: slide-in-fwd-center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    }
+}
     
-    .project-button:hover {
-    box-shadow: var(--hover-shadows);
-    }
-    
-    .project-button:active {
-    box-shadow: var(--hover-shadows),
-                  var(--accent) 0px 0px 30px 5px;
-    background-color: var(--accent);
-    transform: scale(0.95);
-    }
+.project-button:hover {
+box-shadow: var(--hover-shadows);
+}
+
+.project-button:active {
+box-shadow: var(--hover-shadows),
+              var(--accent) 0px 0px 30px 5px;
+background-color: var(--accent);
+transform: scale(0.95);
+}

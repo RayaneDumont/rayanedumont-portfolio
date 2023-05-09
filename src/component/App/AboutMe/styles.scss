@@ -29,6 +29,14 @@
   .aboutMe-title {
     font-size: 36px !important;
   }
+
+  .aboutMe-keywords {
+    font-size: 30px !important;
+  }
+
+  .aboutMe-text {
+    font-size: 15px;
+  }
 }
 
 .aboutMe-container {
@@ -457,6 +465,7 @@
   margin: 5px;
   transition: 0.3s;
   justify-content: center;
+  text-decoration: none;
 }
 
 .social-btn svg {

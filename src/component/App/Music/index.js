@@ -2,10 +2,15 @@ import './styles.scss';
 import React, { useState } from 'react';
 import audioFile1 from './../assets/lookin-for-some.mp3';
 import audioFile2 from './../assets/glory.mp3';
+import audioFile3 from './../assets/king-disease.mp3';
+import audioFile4 from './../assets/vice-city.mp3';
+import audioFile5 from './../assets/mystic-ruins.mp3';
+import audioFile6 from './../assets/quantum-break.mp3';
 
 function Music() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [selectedAudio, setSelectedAudio] = useState(audioFile1);
+  const [currentTime, setCurrentTime] = useState(0);
 
   const handlePlay = () => {
     setIsPlaying(true);
@@ -23,17 +28,29 @@ function Music() {
     audioRef.current.currentTime = 0;
   };
 
+  const handleTimeUpdate = () => {
+    setCurrentTime(audioRef.current.currentTime);
+  };
+
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  };
+
   const handleAudioSelect = (audio) => {
     setSelectedAudio(audio);
-    handleStop(); // Stop playback when a new audio is selected
+    handlePlay();
   };
 
   const audioRef = React.createRef();
 
   return (
     <div className='player-container'>
-      <audio ref={audioRef} src={selectedAudio} />
-      <div className='player-buttons'>
+      <audio ref={audioRef} src={selectedAudio} onTimeUpdate={handleTimeUpdate} />
+      <p className='player-title'>My music</p>
+      <div className='player'>
+        <div className='player-buttons'>
         {isPlaying ? (
           <button onClick={handlePause} className='pause'>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg>
@@ -49,12 +66,22 @@ function Music() {
         <button onClick={handleStop} className='stop'>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><rect x="9" y="9" width="6" height="6"></rect></svg>
         </button>
+        </div>
+        <div className='current-time'>
+          {formatTime(currentTime)}
+        </div>
       </div>
 
       <div className='playlist-container'>
-        <h3 className='playlist-title'>Select Audio:</h3>
-        <button className='card-title' onClick={() => handleAudioSelect(audioFile1)}>Berserk</button>
-        <button className='card-title' onClick={() => handleAudioSelect(audioFile2)}>Akira</button>
+        <h3 className='playlist-title'>Select Audio (Double click on it)</h3>
+        <div className='playlist-songs'>
+          <button className='card-title' onClick={() => handleAudioSelect(audioFile1)}>Berserk</button>
+          <button className='card-title' onClick={() => handleAudioSelect(audioFile2)}>Akira</button>
+          <button className='card-title' onClick={() => handleAudioSelect(audioFile3)}>King Disease</button>
+          <button className='card-title' onClick={() => handleAudioSelect(audioFile4)}>Vice City</button>
+          <button className='card-title' onClick={() => handleAudioSelect(audioFile5)}>Mystic Ruins</button>
+          <button className='card-title' onClick={() => handleAudioSelect(audioFile6)}>Quantum Break</button>
+        </div>
       </div>
     </div>
   );

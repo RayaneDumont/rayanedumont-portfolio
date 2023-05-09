@@ -45,7 +45,7 @@ function AboutMe() {
           </p>
           
 
-        <h2 className='aboutMe-keywords'>Social medias</h2>
+        <h2 className='aboutMe-keywords'>Linkedin & GitHub</h2>
           <div className="social-links">
             <NavLink to="https://www.linkedin.com/in/rayane-dumont/" target='_blank' id="linkedin" className="social-btn flex-center">
               <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"></path></svg><span>rayane-dumont</span>
@@ -68,7 +68,7 @@ function AboutMe() {
                 <img className="photo" src={photo}/>
                 <p className="title">Developper Web front-end</p>
                 <p className='adress'>27 years old</p>
-                <p className='age'>From Bonnières-sur-seine</p>
+                <p className='age'>From Bonnieres-sur-seine</p>
             </div>
           </div>
         </div>

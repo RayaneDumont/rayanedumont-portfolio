@@ -429,19 +429,19 @@ transition-property: width, left;
   text-decoration: underline;
 }
 
-@media (max-width: 794px) {
-.card-container {
-  flex-direction: column;
-}
-
-.projects-container {
-  height: auto;
-  flex-direction: column;
-  align-items: center;
-  overflow-y: auto;
+@media (max-width: 1000px) {
+  .card-container {
+    flex-direction: column;
   }
 
-.projects-title {
-  font-size: 46px;
-}
+  .projects-container {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    }
+
+  .projects-title {
+    font-size: 46px;
+  }
 }

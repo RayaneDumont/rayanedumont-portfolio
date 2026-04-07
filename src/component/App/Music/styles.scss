@@ -68,9 +68,61 @@
   align-items: center;
   border: solid black 1px;
   border-radius: 12px;
-  height: 250px;
+  padding: 1.5em;
   width: 50%;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.now-playing {
+  color: #fff;
+  font-family: 'abandoned';
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5em;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  width: 100%;
+  margin-top: 1em;
+}
+
+.progress-bar {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    rgb(181, 139, 192) 0%,
+    rgb(181, 139, 192) var(--progress, 0%),
+    rgba(255, 255, 255, 0.2) var(--progress, 0%)
+  );
+  outline: none;
+  cursor: pointer;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+  }
+
+  &::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    border: none;
+  }
 }
 
 .player-buttons {
@@ -133,6 +185,12 @@ background-color: var(--accent);
 transform: scale(0.95);
 }
 
+.card-title.active {
+  background-color: fuchsia;
+  box-shadow: var(--hover-shadows), fuchsia 0px 0px 20px 3px;
+  color: #fff;
+}
+
   .play {
     display: flex;
     justify-content: center;
@@ -190,16 +248,33 @@ transform: scale(0.95);
   }
 
 .current-time {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  min-width: 2.5em;
+  text-align: center;
+}
+
+.prev-next {
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: white;
-  margin-top: 1em;
-  background-color: rgb(6, 21, 49);
-  width: 4em;
-  height: 2em;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  align-items: center;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  margin: 1em 0.5em;
+  transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
 }
 
 @media (max-width: 794px) {
@@ -232,8 +307,7 @@ transform: scale(0.95);
   }
 
   .player {
-    height: 200px;
-    width: 70%;
+    width: 90%;
   }
 
   .card-title {
